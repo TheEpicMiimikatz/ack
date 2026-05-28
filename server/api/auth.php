@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $token=$_SERVER['HTTP_X_API_TOKEN'];
