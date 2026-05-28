@@ -161,7 +161,7 @@ func main() {
 		client: &http.Client{
 			Timeout: time.Duration(3200) * time.Millisecond,
 		},
-		token:  "",
+		token:  "'<CUSTOM-API-TOKEN-HERE>",
 		addr:   "http://127.0.0.1:8080",
 		jitter: time.Duration(rand.IntN(30000)) * time.Millisecond,
 	}
