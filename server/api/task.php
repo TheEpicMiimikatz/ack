@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $task = [
         'task_id' => uniqid(),
         'task_status' => 'ready',
-        'package_name' => 'q.zip',
+        'package_name' => '<WHATEVER-PACKAGE-HERE>.zip',
         'hide_window' => true
     ];
 
