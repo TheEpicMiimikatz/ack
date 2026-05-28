@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $task['package_hash'] = hash('sha256', file_get_contents($package_path));
 
-    header('Content-Type: application/json', $true, 200);
+    header('Content-Type: application/json', true, 200);
     echo json_encode($task);
 }
 
