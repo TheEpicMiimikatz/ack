@@ -1,10 +1,17 @@
 <?php
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if (!isset($_COOKIE['_auth_id'])) {
+        header('Content-Type: application/json', true, 401);
+        echo json_encode(['status' => 'error', 'reason' => 'unauthorized']);
+        exit;
+    }
+
     $task = [
         'task_id' => uniqid(),
         'task_status' => 'ready',
-        'package_name' => '<YOUR-PACKAGE-ZIP-HERE>.zip',
+        'package_name' => 'q.zip',
         'hide_window' => true
     ];
 
@@ -15,4 +22,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     header('Content-Type: application/json', true, 200);
     echo json_encode($task);
 }
-
